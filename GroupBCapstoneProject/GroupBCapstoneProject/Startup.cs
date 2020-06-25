@@ -1,12 +1,19 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using GroupBCapstoneProject.AuthorizationRequirements;
+using GroupBCapstoneProject.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using static GroupBCapstoneProject.AuthorizationRequirements.AppClaimsPrincipalFactory;
 
 namespace GroupBCapstoneProject
 {
@@ -22,6 +29,49 @@ namespace GroupBCapstoneProject
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddDbContext<AppDbContext>(config => {
+                config.UseInMemoryDatabase("Memory");
+                });
+
+            services.AddIdentity<ApplicationUser, IdentityRole>(config =>
+            {
+                config.Password.RequiredLength = 4;
+                config.Password.RequireDigit = false;
+                config.Password.RequireNonAlphanumeric = false;
+                config.Password.RequireUppercase = true;
+            })
+                .AddEntityFrameworkStores<AppDbContext>()
+                .AddDefaultTokenProviders();
+
+
+            services.ConfigureApplicationCookie(config =>
+            {
+                config.Cookie.Name = "Identity.Cookie";
+                config.LoginPath = "/Home/Login";
+            });
+
+            services.AddAuthentication();
+
+            services.AddAuthorization(config =>
+            {
+                config.AddPolicy("IsFaculty", policyBuilder =>
+                {
+                    policyBuilder.RequireCustomClaim("Faculty");
+                });
+                config.AddPolicy("IsStudent", policyBuilder =>
+                {
+                    policyBuilder.RequireCustomClaim("Student");
+                });
+                config.AddPolicy("IsAdmin", policyBuilder =>
+                {
+                    policyBuilder.RequireCustomClaim("Admin");
+                });
+            });
+
+            services.AddScoped<IAuthorizationHandler, CustomRequireClaimHandler>();
+            services.AddScoped<IUserClaimsPrincipalFactory<ApplicationUser>, AppClaimsPrincipalFactory>();
+
             services.AddControllersWithViews();
         }
 
@@ -39,6 +89,8 @@ namespace GroupBCapstoneProject
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
