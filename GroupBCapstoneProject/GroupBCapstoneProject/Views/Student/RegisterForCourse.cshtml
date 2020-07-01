@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewData["Title"] = "RegisterForCourse";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using GroupBCapstoneProject.Data;
+<h3>Register For A Course</h3>
+
+<h2>Courses</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Course Number</th>
+            <th>Section Number</th>
+            <th>Available Seats</th>
+            <th>Faculty</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Building Name</th>
+            <th>Building Number</th>
+            <th>Meets on Monday</th>
+            <th>Meets on Tuesday</th>
+            <th>Meets on Wednesday</th>
+            <th>Meets on Thursday</th>
+            <th>Meets on Friday</th>
+            <th>Meets on Saturday</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (CourseForRegistration course in ViewBag.listOfCoursesForRegistration)
+        {<tr>
+            <td>@course.CourseNumber</td>
+            <td>@course.SectionNumber</td>
+            <td>@course.AvailableSeats</td>
+            <td>@course.Faculty</td>
+            <td>@course.StartTime</td>
+            <td>@course.EndTime</td>
+            <td>@course.BuildingName</td>
+            <td>@course.BuildingNumber</td>
+            <td>@course.MeetsOnMonday</td>
+            <td>@course.MeetsOnTuesday</td>
+            <td>@course.MeetsOnWednesday</td>
+            <td>@course.MeetsOnThursday</td>
+            <td>@course.MeetsOnFriday</td>
+            <td>@course.MeetsOnSaturday</td>
+        </tr>    
+        }
+        </tbody>
+    </table>
+
+<p style="font-weight: bold">Want to register for a class?  Enter the Section Number of the class you would like and hit Register.</p>
+
+<form action="/Student/RegisterForCourse" method="post">
+
+    <select id="SelectSectionNumberList" name="courseID">
+        @foreach (CourseForRegistration course in ViewBag.listOfCoursesForRegistration)
+        {
+            <option value="@course.ID">@course.SectionNumber</option>
+        }
+    </select>
+
+    <button type="submit" class="btn btn-dark">Register</button>
+</form>

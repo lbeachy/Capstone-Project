@@ -79,7 +79,7 @@ namespace GroupBCapstoneProject.Controllers
 
                 if (signInResult.Succeeded || user.RoleInSchool.Equals("Student"))
                 {
-                    return RedirectToAction("StudentHome");
+                    return RedirectToAction("Index", "Student");
                 }            
 
                 if (signInResult.Succeeded || user.RoleInSchool.Equals("Faculty"))
@@ -87,7 +87,7 @@ namespace GroupBCapstoneProject.Controllers
                     return RedirectToAction("FacultyHome");
                 }
 
-                return RedirectToAction("AdminHome");
+                return RedirectToAction("Index", "Data");
             }
 
             

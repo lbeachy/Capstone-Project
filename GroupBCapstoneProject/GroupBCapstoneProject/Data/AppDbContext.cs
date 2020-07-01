@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace GroupBCapstoneProject.Data
@@ -19,6 +20,16 @@ namespace GroupBCapstoneProject.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            builder.Entity<Enrollment>()
+                .HasKey(e => new { e.CourseID, e.StudentID });
         }
+
+        public DbSet<GroupBCapstoneProject.Data.Student> Students { get; set; }
+        public DbSet<GroupBCapstoneProject.Data.Faculty> Faculty { get; set; }
+        public DbSet<GroupBCapstoneProject.Data.Course> Courses { get; set; }
+        public DbSet<GroupBCapstoneProject.Data.CourseForRegistration> CourseForRegistrations { get; set; }
+        public DbSet<GroupBCapstoneProject.AuthorizationRequirements.ApplicationUser> AspNetUsers { get; set; }
+        
     }
 }

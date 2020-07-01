@@ -31,7 +31,7 @@ namespace GroupBCapstoneProject
         {
 
             services.AddDbContext<AppDbContext>(config => {
-                config.UseInMemoryDatabase("Memory");
+                config.UseSqlServer(Configuration.GetConnectionString("DatabaseConnectionString"));
                 });
 
             services.AddIdentity<ApplicationUser, IdentityRole>(config =>
