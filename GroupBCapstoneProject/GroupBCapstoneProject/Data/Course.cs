@@ -16,6 +16,7 @@ namespace GroupBCapstoneProject.Data
         public int? FacultyID { get; set; }
         public DateTime? StartTime { get; set; }
         public DateTime? EndTime { get; set; }
+        public int CreditHours { get; set; }
         public string BuildingName { get; set; }
         public string BuildingNumber { get; set; }
         public bool MeetsOnMonday { get; set; }

@@ -21,7 +21,7 @@ namespace GroupBCapstoneProject.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
 
-        //this breaks things when it's not commented out; I need to check it out, I just haven't gotten around to it
+        //this breaks things when it's not commented out; I should check it out, I just haven't gotten around to it
         // public HomeController(ILogger<HomeController> logger)
         // {
         //     _logger = logger;
@@ -36,24 +36,6 @@ namespace GroupBCapstoneProject.Controllers
         }
 
         public IActionResult Index()
-        {
-            return View();
-        }
-
-        [Authorize(Policy = "IsFaculty")]
-        public IActionResult FacultyHome()
-        {
-            return View();
-        }
-
-        [Authorize(Policy = "IsStudent")]
-        public IActionResult StudentHome()
-        {
-            return View();
-        }
-
-        [Authorize(Policy = "IsAdmin")]
-        public IActionResult AdminHome()
         {
             return View();
         }
@@ -77,17 +59,31 @@ namespace GroupBCapstoneProject.Controllers
             {
                 var signInResult = await _signInManager.PasswordSignInAsync(user, password, false, false);
 
-                if (signInResult.Succeeded || user.RoleInSchool.Equals("Student"))
+                if (signInResult.Succeeded && user.RoleInSchool.Equals("Student"))
                 {
-                    return RedirectToAction("Index", "Student");
+                    if (user.CompletedRegistration)
+                    {
+                        return RedirectToAction("Index", "Student");
+                    } else
+                    {
+                        return RedirectToAction("GetStudentInfo", "Student");
+                    }
+                    
                 }            
 
-                if (signInResult.Succeeded || user.RoleInSchool.Equals("Faculty"))
+                if (signInResult.Succeeded && user.RoleInSchool.Equals("Faculty"))
                 {
-                    return RedirectToAction("FacultyHome");
+                    if (user.CompletedRegistration)
+                    {
+                        return RedirectToAction("Index", "Faculty");
+                    }
+                    else
+                    {
+                        return RedirectToAction("GetFacultyInfo", "Faculty");
+                    }
                 }
 
-                return RedirectToAction("Index", "Data");
+                return RedirectToAction("Index", "Admin");
             }
 
             
@@ -102,11 +98,12 @@ namespace GroupBCapstoneProject.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(string username, string password, string roleInSchool)
         {
-           
+
             var user = new ApplicationUser
             {
                 UserName = username,
                 RoleInSchool = roleInSchool,
+                CompletedRegistration = false,
             };
 
             var result = await _userManager.CreateAsync(user, password);
@@ -117,15 +114,15 @@ namespace GroupBCapstoneProject.Controllers
 
                 if (signInResult.Succeeded && user.RoleInSchool.Equals("Student"))
                 {
-                    return RedirectToAction("StudentHome");
+                    return RedirectToAction("GetStudentInfo", "Student");
                 } 
 
                 if (signInResult.Succeeded && user.RoleInSchool.Equals("Faculty"))
                 {
-                    return RedirectToAction("FacultyHome");
+                    return RedirectToAction("GetFacultyInfo", "Faculty");
                 }
 
-                return RedirectToAction("AdminHome");
+                return RedirectToAction("Index", "Admin");
             }
 
             return RedirectToAction("Index");

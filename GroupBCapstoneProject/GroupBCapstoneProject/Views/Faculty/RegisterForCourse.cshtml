@@ -5,7 +5,7 @@
 }
 
 @using GroupBCapstoneProject.Data;
-<h3>Register For A Course</h3>
+<h3>Register to Teach Course</h3>
 
 <h2>Courses</h2>
 
@@ -52,9 +52,9 @@
         </tbody>
     </table>
 
-<p style="font-weight: bold">Want to register for a class?  Enter the Section Number of the class you would like and hit Register.</p>
+<p style="font-weight: bold">Want to teach a class?  Enter the Section Number of the class you would like to teach and hit Register.</p>
 
-<form action="/Student/RegisterForCourse" method="post">
+<form action="/Faculty/RegisterForCourse" method="post">
 
     <select id="SelectSectionNumberList" name="courseID">
         @foreach (CourseForRegistration course in ViewBag.listOfCoursesForRegistration)

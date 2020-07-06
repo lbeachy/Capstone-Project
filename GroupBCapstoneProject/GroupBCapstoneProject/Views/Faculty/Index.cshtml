@@ -1,0 +1,14 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    <p>Hello there, Faculty Person!</p>
+
+    <p>Enrolled Classes</p>
+    <p>Query the database (specifically the enrollments table), make a list</p>
+    <p>Register to teach a class by hitting the button</p>
+    @using (Html.BeginForm("Index", "Faculty", FormMethod.Post))
+    {
+        <input type="submit" value="Sign up to teach a class" class="btn btn-dark" name="btnSubmit" />
+    }
+}

@@ -173,3 +173,9 @@ D:\C# Programming\Capstone Stuff\GroupBCapstoneProject\GroupBCapstoneProject\obj
 D:\C# Programming\Capstone Stuff\GroupBCapstoneProject\GroupBCapstoneProject\obj\Debug\netcoreapp3.1\Razor\Views\Data\AddCourse.cshtml.g.cs
 D:\C# Programming\Capstone Stuff\GroupBCapstoneProject\GroupBCapstoneProject\obj\Debug\netcoreapp3.1\Razor\Views\Student\Index.cshtml.g.cs
 D:\C# Programming\Capstone Stuff\GroupBCapstoneProject\GroupBCapstoneProject\obj\Debug\netcoreapp3.1\Razor\Views\Student\RegisterForCourse.cshtml.g.cs
+D:\C# Programming\Capstone Stuff\GroupBCapstoneProject\GroupBCapstoneProject\obj\Debug\netcoreapp3.1\Razor\Views\Student\FailedToCreate.cshtml.g.cs
+D:\C# Programming\Capstone Stuff\GroupBCapstoneProject\GroupBCapstoneProject\obj\Debug\netcoreapp3.1\Razor\Views\Student\GetStudentInfo.cshtml.g.cs
+D:\C# Programming\Capstone Stuff\GroupBCapstoneProject\GroupBCapstoneProject\obj\Debug\netcoreapp3.1\Razor\Views\Faculty\FailedToCreate.cshtml.g.cs
+D:\C# Programming\Capstone Stuff\GroupBCapstoneProject\GroupBCapstoneProject\obj\Debug\netcoreapp3.1\Razor\Views\Faculty\Index.cshtml.g.cs
+D:\C# Programming\Capstone Stuff\GroupBCapstoneProject\GroupBCapstoneProject\obj\Debug\netcoreapp3.1\Razor\Views\Faculty\RegisterForCourse.cshtml.g.cs
+D:\C# Programming\Capstone Stuff\GroupBCapstoneProject\GroupBCapstoneProject\obj\Debug\netcoreapp3.1\Razor\Views\Faculty\GetFacultyInfo.cshtml.g.cs

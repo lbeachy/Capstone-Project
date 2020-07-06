@@ -28,6 +28,7 @@ namespace GroupBCapstoneProject.Data
         public DbSet<GroupBCapstoneProject.Data.Student> Students { get; set; }
         public DbSet<GroupBCapstoneProject.Data.Faculty> Faculty { get; set; }
         public DbSet<GroupBCapstoneProject.Data.Course> Courses { get; set; }
+        public DbSet<GroupBCapstoneProject.Data.Enrollment> Enrollments { get; set; }
         public DbSet<GroupBCapstoneProject.Data.CourseForRegistration> CourseForRegistrations { get; set; }
         public DbSet<GroupBCapstoneProject.AuthorizationRequirements.ApplicationUser> AspNetUsers { get; set; }
         

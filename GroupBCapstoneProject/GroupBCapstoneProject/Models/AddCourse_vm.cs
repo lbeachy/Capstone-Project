@@ -36,6 +36,10 @@ namespace GroupBCapstoneProject.Models
         [DisplayName("End Time")]
         public DateTime? EndTime { get; set; }
 
+        [DisplayName("Credit Hours")]
+        [Range(0, 10, ErrorMessage = "Must be between 0 and 10")]
+        public int CreditHours { get; set; }
+
         [DisplayName("Building Name")]
         [MaxLength(30, ErrorMessage = "Cannot be longer than 30 characters")]
         public string BuildingName { get; set; }
