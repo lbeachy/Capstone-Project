@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Authentication;
 using GroupBCapstoneProject.Data;
 using Microsoft.AspNetCore.Identity;
 using GroupBCapstoneProject.AuthorizationRequirements;
+using System.IO;
 
 namespace GroupBCapstoneProject.Controllers
 {
@@ -21,16 +22,12 @@ namespace GroupBCapstoneProject.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
 
-        //this breaks things when it's not commented out; I should check it out, I just haven't gotten around to it
-        // public HomeController(ILogger<HomeController> logger)
-        // {
-        //     _logger = logger;
-        // }
-
         public HomeController(
+            ILogger<HomeController> logger,
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager)
         {
+            _logger = logger;
             _userManager = userManager;
             _signInManager = signInManager;
         }
@@ -38,6 +35,16 @@ namespace GroupBCapstoneProject.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        public IActionResult Faq()
+        {
+            return View();
+        }
+
+        public IActionResult Contact()
+        {
+            return View();           
         }
 
         public IActionResult Login()
@@ -90,44 +97,6 @@ namespace GroupBCapstoneProject.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult Register()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Register(string username, string password, string roleInSchool)
-        {
-
-            var user = new ApplicationUser
-            {
-                UserName = username,
-                RoleInSchool = roleInSchool,
-                CompletedRegistration = false,
-            };
-
-            var result = await _userManager.CreateAsync(user, password);
-
-            if (result.Succeeded)
-            {
-                var signInResult = await _signInManager.PasswordSignInAsync(user, password, false, false);
-
-                if (signInResult.Succeeded && user.RoleInSchool.Equals("Student"))
-                {
-                    return RedirectToAction("GetStudentInfo", "Student");
-                } 
-
-                if (signInResult.Succeeded && user.RoleInSchool.Equals("Faculty"))
-                {
-                    return RedirectToAction("GetFacultyInfo", "Faculty");
-                }
-
-                return RedirectToAction("Index", "Admin");
-            }
-
-            return RedirectToAction("Index");
-        }
-
         public async Task<IActionResult> LogOut()
         {
             await _signInManager.SignOutAsync();
@@ -138,6 +107,11 @@ namespace GroupBCapstoneProject.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public IActionResult Apply()
+        {
+            return RedirectToAction("RegisterStudent", "Account");
         }
     }
 }

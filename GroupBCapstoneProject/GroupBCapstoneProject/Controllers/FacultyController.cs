@@ -92,7 +92,6 @@ namespace GroupBCapstoneProject.Controllers
             
             course.FacultyID = facultyID;
 
-
             _context.Update(course);
             await _context.SaveChangesAsync();
 

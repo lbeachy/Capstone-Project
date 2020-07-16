@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using GroupBCapstoneProject.AuthorizationRequirements;
 using GroupBCapstoneProject.Controllers.Helpers;
+using Microsoft.AspNetCore.Identity.UI.V3.Pages.Internal.Account.Manage;
 
 namespace GroupBCapstoneProject.Controllers
 {
@@ -34,7 +35,7 @@ namespace GroupBCapstoneProject.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(string btnSubmit)
+        public IActionResult Index(string btnSubmit) 
         {
             switch (btnSubmit)
             {
@@ -73,32 +74,59 @@ namespace GroupBCapstoneProject.Controllers
             return View("FailedToCreate");
         }
 
-        public IActionResult RegisterForCourse()
+        public IActionResult RegisterForCourse(string message)
         {
             RegistrationManager manager = new RegistrationManager(_context);
             ViewBag.listOfCoursesForRegistration = manager.GetListOfCoursesForRegistration();
+            if (String.IsNullOrEmpty(message))
+            {
+                return View();
+            } else
+            {
+                ViewData["ErrorMessage"] = message;
+            }
+            
             return View();
         }
 
         [HttpPost]
         async public Task<IActionResult> RegisterForCourse(int courseID)
         {
-            
             var userID = _userManager.GetUserId(User);
             RegistrationManager manager = new RegistrationManager(_context);
             await manager.AddBalanceToStudent(courseID, userID);
             int studentID = manager.GetStudentIDFromUserID(userID);
-            Enrollment enrollment = new Enrollment()
+
+            if (manager.IsStudentAlreadyEnrolled(studentID, courseID))
             {
-                CourseID = courseID,
-                StudentID = studentID,
-                Date = DateTime.Now,
-            };
+                return RedirectToAction("RegisterForCourse", new { message = "You're already enrolled in this class" });
+            }
 
-            _context.Add(enrollment);     
-            await _context.SaveChangesAsync();
+            Course course = manager.GetCourseByCourseID(courseID);
+            if (course.Capacity == course.Enrollment)
+            {
+                return RedirectToAction("RegisterForCourse", new { message = "Sorry, that class is already full." });
+            }
 
-            return View("Index");
+            else
+            {
+                Enrollment enrollment = new Enrollment()
+                {
+                    CourseID = courseID,
+                    StudentID = studentID,
+                    Date = DateTime.Now,
+                };
+
+                
+                course.Enrollment++;
+                _context.Update(course);
+
+
+                _context.Add(enrollment);
+                await _context.SaveChangesAsync();
+
+                return View("Index");
+            }
         }
     }
 }

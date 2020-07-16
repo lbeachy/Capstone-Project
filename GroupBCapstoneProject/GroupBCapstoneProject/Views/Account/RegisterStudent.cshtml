@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewData["Title"] = "RegisterStudent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Register Account</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <form action="/Account/RegisterStudent" method="post" onsubmit="return checkForm(this);">
+                <div class="form-group">
+                    <label for="firstName" class="control-label" name="firstName">First Name</label>
+                    <input type="text" name="firstName" class="form-control" required/>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName" class="control-label" name="lastName">Last Name</label>
+                    <input type="text" name="lastName" class="form-control" required/>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="control-label" name="password">Password</label>
+                    <input type="password" name="password" class="form-control" required/>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword" class="control-label" name="confirmPassword">Confirm Password</label>
+                    <input type="password" name="confirmPassword" class="form-control" required/>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <p>Password must be between 6-20 characters long and contain a number, a capital letter, and a lowercase letter</p>
+</div>
+
+<script>
+    function checkForm(form) {
+
+        if (form.firstName.value == "") {
+            alert("Error: First Name cannot be left blank.")
+            form.firstName.focus();
+            return false;
+        }
+
+        if (form.lastName.value == "") {
+            alert("Error: Last Name cannot be left blank.")
+            form.lastName.focus();
+            return false;
+        }
+
+        if (form.password.value == "") {
+            alert("Error: Password cannot be left blank.")
+            form.password.focus();
+            return false;
+        }
+
+        if (form.confirmPassword.value == "") {
+            alert("Error: Confirm Password Field cannot be left blank.")
+            form.confirmPassword.focus();
+            return false;
+        }
+
+        var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+        if (!form.password.value.match(passwordRegex)) {
+            alert("Error: Password must be between 6-20 characters and contain a number, a capital letter, and a lowercase letter");
+            form.password.focus();
+            return false;
+        }
+
+        if (form.password.value != form.confirmPassword.value) {
+            alert("Error: Password and Confirm Password fields must match");
+            form.password.focus();
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
+                

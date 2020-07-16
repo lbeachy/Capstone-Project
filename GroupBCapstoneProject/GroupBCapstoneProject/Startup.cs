@@ -36,8 +36,8 @@ namespace GroupBCapstoneProject
 
             services.AddIdentity<ApplicationUser, IdentityRole>(config =>
             {
-                config.Password.RequiredLength = 4;
-                config.Password.RequireDigit = false;
+                config.Password.RequiredLength = 6;
+                config.Password.RequireDigit = true;
                 config.Password.RequireNonAlphanumeric = false;
                 config.Password.RequireUppercase = true;
             })
@@ -86,6 +86,8 @@ namespace GroupBCapstoneProject
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            //app.UseDefaultFiles();
             app.UseStaticFiles();
 
             app.UseRouting();

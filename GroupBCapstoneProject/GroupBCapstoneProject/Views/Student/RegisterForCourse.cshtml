@@ -36,8 +36,17 @@
             <td>@course.SectionNumber</td>
             <td>@course.AvailableSeats</td>
             <td>@course.Faculty</td>
-            <td>@course.StartTime</td>
-            <td>@course.EndTime</td>
+            <td>@if (course.StartTime.HasValue) 
+                {
+                @course.StartTime.Value.ToString("T");
+                }
+                else { @course.StartTime.ToString(); }</td>
+            <td>
+                @if (course.EndTime.HasValue)
+                {
+                    @course.EndTime.Value.ToString("T");
+                }
+                else { @course.EndTime.ToString(); }</td>
             <td>@course.CreditHours</td>
             <td>@course.BuildingName</td>
             <td>@course.BuildingNumber</td>
@@ -53,6 +62,7 @@
     </table>
 
 <p style="font-weight: bold">Want to register for a class?  Enter the Section Number of the class you would like and hit Register.</p>
+<div style="color: #ff0000;">@ViewData["ErrorMessage"]</div>
 
 <form action="/Student/RegisterForCourse" method="post">
 

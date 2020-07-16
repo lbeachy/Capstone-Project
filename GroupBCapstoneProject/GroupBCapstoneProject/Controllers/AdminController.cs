@@ -120,7 +120,44 @@ namespace GroupBCapstoneProject.Controllers
             return View("FailedToCreate");
         }
 
-        
-            
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Register(string username, string password, string roleInSchool)
+        {
+
+            var user = new ApplicationUser
+            {
+                UserName = username,
+                RoleInSchool = roleInSchool,
+                CompletedRegistration = false,
+            };
+
+            var result = await _userManager.CreateAsync(user, password);
+
+            if (result.Succeeded)
+            {
+                var signInResult = await _signInManager.PasswordSignInAsync(user, password, false, false);
+
+                if (signInResult.Succeeded && user.RoleInSchool.Equals("Student"))
+                {
+                    return RedirectToAction("GetStudentInfo", "Student");
+                }
+
+                if (signInResult.Succeeded && user.RoleInSchool.Equals("Faculty"))
+                {
+                    return RedirectToAction("GetFacultyInfo", "Faculty");
+                }
+
+                return RedirectToAction("Index", "Admin");
+            }
+
+            return RedirectToAction("Index");
+        }
+
+
     }
 }

@@ -70,6 +70,7 @@ namespace GroupBCapstoneProject.Controllers.Helpers
                      FacultyID = c.FacultyID,
                      StartTime = c.StartTime,
                      EndTime = c.EndTime,
+                     CreditHours = c.CreditHours,
                      BuildingName = c.BuildingName,
                      BuildingNumber = c.BuildingNumber,
                      MeetsOnMonday = c.MeetsOnMonday,
@@ -97,6 +98,28 @@ namespace GroupBCapstoneProject.Controllers.Helpers
             // really should add some error catching for when this inevitably fails.
 
             return studentIDs[0];             
+        }
+
+        public void SubtractBalanceFromStudent(int studentID, decimal amountToBePaid)
+        {
+            Student student = GetStudentByStudentID(studentID);
+            student.Balance -= amountToBePaid;
+            _context.Update(student);
+        } 
+
+        public bool IsStudentAlreadyEnrolled(int studentID, int courseID)
+        {
+            var enrollments = _context.Enrollments
+                .Where(e => e.StudentID.Equals(studentID) && e.CourseID.Equals(courseID))
+                .Select(e => e.CourseID)
+                .ToList();
+
+            if (enrollments.Count == 0)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         public int GetFacultyIDFromUserID(string userID)
@@ -154,8 +177,6 @@ namespace GroupBCapstoneProject.Controllers.Helpers
                     PhoneNumber = s.PhoneNumber
                 })
                 .ToList();
-
-            // really should add some error catching for when this inevitably fails.
 
             return students[0];
         }
