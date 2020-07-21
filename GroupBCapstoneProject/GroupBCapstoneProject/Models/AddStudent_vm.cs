@@ -37,9 +37,8 @@ namespace GroupBCapstoneProject.Models
 
         [DisplayName("Phone Number")]
         [Required]
-        [MinLength(10)]
-        [MaxLength(10)]
-        [Phone(ErrorMessage ="Please enter a phone number without formatting anything")]
+        [DataType(DataType.PhoneNumber, ErrorMessage ="Invalid Phone Number")]
+        [RegularExpression(@"^([0-9]{10})$", ErrorMessage ="Invalid Phone Number")]
         public string PhoneNumber { get; set; }
     }
 }

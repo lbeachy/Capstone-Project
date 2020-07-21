@@ -35,6 +35,8 @@ namespace GroupBCapstoneProject.Controllers
             int studentID = manager.GetStudentIDFromUserID(userID);
             Student student = manager.GetStudentByStudentID(studentID);
             ViewData["StudentBalance"] = student.Balance;
+            List<CourseForRegistration> courses = manager.GetStudentEnrollments(studentID);
+            ViewBag.studentEnrollments = courses;
             return View();
         }
 

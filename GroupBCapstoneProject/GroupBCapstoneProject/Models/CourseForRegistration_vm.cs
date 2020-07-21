@@ -25,5 +25,7 @@ namespace GroupBCapstoneProject.Models
         public bool MeetsOnThursday { get; set; }
         public bool MeetsOnFriday { get; set; }
         public bool MeetsOnSaturday { get; set; }
+
+        
     }
 }

@@ -23,5 +23,31 @@ namespace GroupBCapstoneProject.Data
         public bool MeetsOnThursday { get; set; }
         public bool MeetsOnFriday { get; set; }
         public bool MeetsOnSaturday { get; set; }
+
+        public String DisplayMonday()
+        {
+            return MeetsOnMonday ? "Yes" : "No";
+        }
+
+        public String DisplayTuesday()
+        {
+            return MeetsOnTuesday ? "Yes" : "No";
+        }
+        public String DisplayWednesday()
+        {
+            return MeetsOnWednesday ? "Yes" : "No";
+        }
+        public String DisplayThursday()
+        {
+            return MeetsOnThursday ? "Yes" : "No";
+        }
+        public String DisplayFriday()
+        {
+            return MeetsOnFriday ? "Yes" : "No";
+        }
+        public String DisplaySaturday()
+        {
+            return MeetsOnSaturday ? "Yes" : "No";
+        }
     }
 }

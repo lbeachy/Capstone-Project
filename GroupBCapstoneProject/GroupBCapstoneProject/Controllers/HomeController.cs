@@ -76,13 +76,24 @@ namespace GroupBCapstoneProject.Controllers
             return View();
         }
 
-        public IActionResult Login()
+        public IActionResult Apply()
+        {
+            return RedirectToAction("RegisterStudent", "Account");
+        } 
+
+        public IActionResult FinancialAid()
         {
             return View();
         }
 
-        public IActionResult FinancialAid()
+        public IActionResult Login(string message)
         {
+            if (String.IsNullOrEmpty(message))
+            {
+                return View();
+            }
+
+            ViewData["ErrorMessage"] = message;
             return View();
         }
 
@@ -119,11 +130,15 @@ namespace GroupBCapstoneProject.Controllers
                     }
                 }
 
-                return RedirectToAction("Index", "Admin");
+                if (signInResult.Succeeded && user.RoleInSchool.Equals("Admin"))
+                {
+                    return RedirectToAction("Index", "Admin");
+                }
+                return RedirectToAction("Login", new { message = "The username or password was incorrect" });
             }
 
             
-            return RedirectToAction("Index");
+            return RedirectToAction("Login", new { message = "The username or password was incorrect" });
         }
 
         public async Task<IActionResult> LogOut()
@@ -138,9 +153,6 @@ namespace GroupBCapstoneProject.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public IActionResult Apply()
-        {
-            return RedirectToAction("RegisterStudent", "Account");
-        }
+       
     }
 }

@@ -1,6 +1,7 @@
 ﻿using GroupBCapstoneProject.AuthorizationRequirements;
 using GroupBCapstoneProject.Data;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Razor.Language.Extensions;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System;
@@ -181,15 +182,37 @@ namespace GroupBCapstoneProject.Controllers.Helpers
             return students[0];
         }
 
-        public List<Enrollment> GetStudentEnrollments(int studentID)
+        public List<CourseForRegistration> GetStudentEnrollments(int studentID)
         {
-            var studentEnrollments = from enrollment in _context.Enrollments
-                                     join student in _context.Students on enrollment.StudentID equals student.ID
-                                     where student.ID.Equals(studentID)
-                                     select new Enrollment { StudentID = student.ID, CourseID = enrollment.CourseID, Date = enrollment.Date };
+            var enrollments = from enrollment in _context.Enrollments
+                              join course in _context.Courses on enrollment.CourseID equals course.ID
+                              join faculty in _context.Faculty on course.FacultyID equals faculty.ID
+                              where studentID.Equals(enrollment.StudentID)
+                              select new CourseForRegistration
+                              {
+                                  ID = course.ID,
+                                  CourseNumber = course.CourseNumber,
+                                  SectionNumber = course.SectionNumber,
+                                  Faculty = $"{faculty.FirstName} {faculty.LastName}",
+                                  StartTime = course.StartTime,
+                                  EndTime = course.EndTime,
+                                  CreditHours = course.CreditHours,
+                                  BuildingName = course.BuildingName,
+                                  BuildingNumber = course.BuildingNumber,
+                                  MeetsOnMonday = course.MeetsOnMonday,
+                                  MeetsOnTuesday = course.MeetsOnTuesday,
+                                  MeetsOnWednesday = course.MeetsOnWednesday,
+                                  MeetsOnThursday = course.MeetsOnThursday,
+                                  MeetsOnFriday = course.MeetsOnFriday,
+                                  MeetsOnSaturday = course.MeetsOnSaturday
+                              };
+            List<CourseForRegistration> courses = enrollments.ToList();
+            if (courses != null)
+            {
+                return courses;
+            }
 
-            List<Enrollment> enrollments = studentEnrollments.ToList();
-            return enrollments;
+            return new List<CourseForRegistration>();
         }
     }
 }
