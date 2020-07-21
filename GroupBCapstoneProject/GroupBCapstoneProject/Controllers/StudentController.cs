@@ -17,6 +17,7 @@ namespace GroupBCapstoneProject.Controllers
     {
         private readonly AppDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
+    
         public StudentController(AppDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
@@ -30,7 +31,10 @@ namespace GroupBCapstoneProject.Controllers
             {
                 return RedirectToAction("GetStudentInfo");
             }
-
+            RegistrationManager manager = new RegistrationManager(_context);
+            int studentID = manager.GetStudentIDFromUserID(userID);
+            Student student = manager.GetStudentByStudentID(studentID);
+            ViewData["StudentBalance"] = student.Balance;
             return View();
         }
 
@@ -93,8 +97,7 @@ namespace GroupBCapstoneProject.Controllers
         async public Task<IActionResult> RegisterForCourse(int courseID)
         {
             var userID = _userManager.GetUserId(User);
-            RegistrationManager manager = new RegistrationManager(_context);
-            await manager.AddBalanceToStudent(courseID, userID);
+            RegistrationManager manager = new RegistrationManager(_context);         
             int studentID = manager.GetStudentIDFromUserID(userID);
 
             if (manager.IsStudentAlreadyEnrolled(studentID, courseID))
@@ -110,6 +113,7 @@ namespace GroupBCapstoneProject.Controllers
 
             else
             {
+                await manager.AddBalanceToStudent(courseID, userID);
                 Enrollment enrollment = new Enrollment()
                 {
                     CourseID = courseID,
@@ -125,7 +129,7 @@ namespace GroupBCapstoneProject.Controllers
                 _context.Add(enrollment);
                 await _context.SaveChangesAsync();
 
-                return View("Index");
+                return RedirectToAction("Index");
             }
         }
     }

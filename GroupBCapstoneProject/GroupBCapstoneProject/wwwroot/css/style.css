@@ -1,7 +1,6 @@
 /*!
- * Bootstrap v4.3.1 (https://getbootstrap.com/)* 
- * 
- */
+ * Bootstrap v4.3.1 (https://getbootstrap.com/)
+  */
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -2094,7 +2093,7 @@ fieldset:disabled a.btn {
       box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5); }
 
 .btn-secondary {
-  color;
+  color: #fff;
   background-color: #6c757d;
   border-color: #6c757d; }
   .btn-secondary:hover {
@@ -9513,11 +9512,6 @@ textarea.form-control {
   border-radius: 0px;
   -webkit-box-shadow: none !important;
   box-shadow: none !important; }
- .form-control option{
-    color: black;
-     font-size: 16px;
-     
-}
   .appointment-form .form-control::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
     color: rgba(255, 255, 255, 0.9); }
@@ -9531,7 +9525,7 @@ textarea.form-control {
     /* Firefox 18- */
     color: rgba(255, 255, 255, 0.9); }
   .appointment-form .form-control:focus, .appointment-form .form-control:active {
-    border-color: black; }
+    border-color: #fff; }
 
 .appointment-form textarea.form-control {
   height: inherit !important; }

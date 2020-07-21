@@ -33,6 +33,8 @@ body {
     font-family: 'Oswald', sans-serif;
     letter-spacing: 2px;
     position: relative;
+    text-align: left;
+ 
 }
 
 .acc h3:after {

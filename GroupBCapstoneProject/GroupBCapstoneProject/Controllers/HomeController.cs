@@ -47,6 +47,35 @@ namespace GroupBCapstoneProject.Controllers
             return View();           
         }
 
+        public IActionResult About()
+        {
+            return View();
+        }
+
+        public IActionResult Athletics()
+        {
+            return View();
+        }
+
+        public IActionResult Academics()
+        {
+            return View();
+        }
+        public IActionResult Events()
+        {
+            return View();
+        }
+
+        public IActionResult Services()
+        {
+            return View();
+        }
+
+        public IActionResult SportsEvents()
+        {
+            return View();
+        }
+
         public IActionResult Login()
         {
             return View();

@@ -51,22 +51,24 @@
         <!-- External CSS Stylesheet -->
         <link href="~/styles/layout.css" rel="stylesheet" type="text/css">
 
-        <link rel="icon" href="favicon.ico">
+        <link rel="icon" href="~/favicon.ico">
 
         <link rel="stylesheet" href="~/css/open-iconic-bootstrap.min.css">
         <link rel="stylesheet" href="~/css/animate.css">
-
+                                     
         <link rel="stylesheet" href="~/css/owl.carousel.min.css">
         <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
         <link rel="stylesheet" href="~/css/magnific-popup.css">
-
+                                     
         <link rel="stylesheet" href="~/css/aos.css">
-
+                                     
         <link rel="stylesheet" href="~/css/ionicons.min.css">
-
+                                     
         <link rel="stylesheet" href="~/css/flaticon.css">
         <link rel="stylesheet" href="~/css/icomoon.css">
         <link rel="stylesheet" href="~/css/style.css">
+        <link rel="stylesheet" href="~/styles/styleCon.css">
+
     </head>
     <body>
 
@@ -76,6 +78,7 @@
         <div class="wrapper border" id="home">
 
             <div class="container">
+
 
                 <nav class="navbar fixed-top navbar-expand-md  scrolling-navbar  p-3">
 
@@ -90,7 +93,7 @@
 
                             <img src="~/gallery/Georgia3.PNG" class="img-fav" alt="University Logo">
                             <li class="nav-item active bg-danger ">
-                                <a href="../home" class="nav-link">
+                                <a href="../home/index" class="nav-link">
                                     <p class="m-0"> <strong>Home</strong></p>
 
                                 </a>
@@ -98,30 +101,37 @@
 
                             </li>
 
+                            <!--about GBU-->
 
+                            <li class="nav-item px-2">
+                                <a href="../home/about" class="nav-link">
+                                    <p class="m-0"> <strong>About GBU</strong></p>
 
-                            <li class="nav-item dropdown">
-
-                                <a href="#" class="nav-link dropdown-toggle px-3" id="navbarDropdpwn" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <strong>
-                                        About Us
-                                    </strong>
                                 </a>
-                                <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdpwn">
-
-                                    <a href="#contactus" class="dropdown-item">Contact us</a>
-                                    <a href="#locations" class="dropdown-item">Map</a>
-                                    <a href="#footer" class="dropdown-item">Go Footer</a>
-
-
-
-
-
-                                </div>
 
 
                             </li>
+                            <!--
 
+                             <li class="nav-item dropdown">
+
+                                <a href="about.html" class="nav-link dropdown-toggle px-3" id="navbarDropdpwn" role ="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong>
+                       About Us </strong></a>
+                                   <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdpwn">
+
+                        <a href="about.html" class="dropdown-item">About GBU</a>
+
+
+
+
+
+
+                        </div>
+
+
+                            </li>
+    -->
+                            <!--FAQ-->
                             <li class="nav-item px-2">
                                 <a href="../home/faq" class="nav-link">
                                     <p class="m-0"> <strong>F.A.Q</strong></p>
@@ -130,6 +140,10 @@
 
 
                             </li>
+
+
+                            <!--    CONTACT US-->
+
                             <li class="nav-item px-2">
                                 <a href="../home/contact" class="nav-link">
                                     <p class="m-0"> <strong>Contact Us</strong></p>
@@ -220,7 +234,7 @@
 
 
                 <div class="call-to-action">
-                    <a id="header-call-to-action" class="cap-button" href="../home/apply" title="Apply" target="_blank">Apply</a>
+                    <a id="header-call-to-action" class="cap-button" href="../home/Apply" title="Apply" target="_blank">Apply</a>
                 </div>
             </header>
 
@@ -258,38 +272,15 @@
                 <div class="collapse navbar-collapse justify-content-around" id="mainNavbarContent">
 
 
-                    <!--
 
 
-                              <div class="mx-auto text-center">
-                                <nav class="site-navigation position-relative text-right" role="navigation">
-                                  <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block  m-0 p-0">
-                                    <li><a href="#home-section" class="nav-link">Home</a></li>
-                                    <li><a href="#courses-section" class="nav-link">Courses</a></li>
-                                    <li><a href="#programs-section" class="nav-link">Programs</a></li>
-                                    <li><a href="#teachers-section" class="nav-link">Teachers</a></li>
-                                  </ul>
-                                </nav>
-                              </div>
 
-
-                    <div class="site-section courses-title" id="courses-section">
-                          <div class="container">
-                            <div class="row mb-5 justify-content-center">
-                              <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="">
-                                <h2 class="section-title">Courses</h2>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                    -->
                     <!--Align on Left-->
 
                     <ul class="navbar-nav ">
 
                         <li class="nav-item">
-                            <a href="..home" class="nav-link px-3 active"><strong>HOME</strong><span class="sr-only">(current)</span></a>
+                            <a href="../home/index" class="nav-link px-3 active"><strong>HOME</strong><span class="sr-only">(current)</span></a>
 
                         </li>
 
@@ -309,8 +300,8 @@
 
                             <div class="dropdown-menu bg-info" aria-labelledby="navbarDropdpwn">
                                 <a href="#" class="dropdown-item">Tuition</a>
-                                <a href="..home/apply" class="dropdown-item">Apply Online</a>
-                                <a href="..home/financialaid" class="dropdown-item">Financial Aid</a>
+                                <a href="../home/Apply" class="dropdown-item">Apply Online</a>
+                                <a href="../home/financialaid" class="dropdown-item">Financial Aid</a>
 
 
                             </div>
@@ -325,9 +316,9 @@
 
                             <div class="dropdown-menu bg-info" aria-labelledby="navbarDropdpwn">
 
-                                <a href="#" class="dropdown-item">Courses</a>
-                                <a href="#" class="dropdown-item">Academic Departments</a>
-                                <a href="#" class="dropdown-item">School Calendar</a>
+
+                                <a href="../home/academics" class="dropdown-item">Academic Departments</a>
+                                <a href="../home/services" class="dropdown-item">Student Services</a>
 
                             </div>
                         </li>
@@ -339,9 +330,8 @@
 
 
                             <div class="dropdown-menu bg-info" aria-labelledby="navbarDropdpwn">
-                                <a href="#" class="dropdown-item">Athletics</a>
-                                <a href="#" class="dropdown-item">Clubs</a>
-                                <a href="#" class="dropdown-item">Events</a>
+                                <a href="../home/athletics" class="dropdown-item">Athletics</a>
+                                <a href="../home/events" class="dropdown-item">Events</a>
 
 
                             </div>
@@ -349,16 +339,12 @@
 
 
                         <li class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle px-3" id="navbarDropdpwn" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong>About Us</strong></a>
+                            <a href="../home/about" class="nav-link dropdown-toggle px-3" id="navbarDropdpwn" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong>About Us</strong></a>
 
 
                             <div class="dropdown-menu bg-info" aria-labelledby="navbarDropdpwn">
-                                <a href="#" class="dropdown-item">History</a>
-                                <a href="#" class="dropdown-item">Locations</a>
-                                <a href="#" class="dropdown-item">Student Success</a>
-                                <a href="#" class="dropdown-item">Policies</a>
-                                <a href="#" class="dropdown-item">Employment</a>
-                                <a href="#" class="dropdown-item">News</a>
+                                <a href="../home/about" class="dropdown-item">About GBU</a>
+
 
 
 
@@ -372,12 +358,9 @@
 
                     <!--Align on Right-->
 
-                    <li class="nav-item dropdown">
-                        <a href="../home/login" class="nav-link dropdown-toggle bg-success px-3" id="navbarDropdpwn" role="button"><strong>Login</strong></a>
+                    <li class="nav-item">
+                        <a href="../home/login" class="nav-link bg-success px-3" role="button" aria-haspopup="true" aria-expanded="false"><strong>Login</strong></a>
 
-
-                        <div class="dropdown-menu bg-info" aria-labelledby="navbarDropdpwn">
-                        </div>
                     </li>
 
                     <form class="form-inline my-2 my-lg-0">
@@ -400,13 +383,6 @@
 
 
         <!-- END nav -->
-        <!--Scroll down arrow-->
-        <!--section id="section01" class="demo">
-          <h1>Scroll Down Button #1</h1>
-          <a href="#section02"><span></span>Scroll</a>
-        </section>
-
-              -->
         <!--Carousel section starts here-->
 
         <section class="home-slider owl-carousel">
@@ -457,7 +433,15 @@
             </div>
         </section>
 
-        <!--   -->
+        <!-- scroll down  -->
+
+
+        <div class="sections">
+            <div id="section06" class="demo">
+
+                <a href="#contactus"><span></span>Scroll</a>
+            </div>
+        </div>
 
         <section class="breadcrumbs-section" id="contactus">
             <div class="container pl-3 p-sm-3">
@@ -465,7 +449,7 @@
                     <div class="col-12">
                         <h2>Contact Us</h2>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="../home">Home</a></li>
+                            <li class="breadcrumb-item"><a href="../home/index">Home</a></li>
                             <li class="breadcrumb-item active">Contact Us</li>
                         </ol>
                     </div>
@@ -478,12 +462,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit pellentesque habitant. Tristique senectus et netus et malesuada fames ac turpis. Integer malesuada nunc vel risus commodo viverra maecenas.</p>
+                        <p>Have a question for GBU? Want to tell us how good of a job we’re doing? Need to tell us something ever so important? Then send us a message using the form below. We’ll get back to you in no more than 5 business days!</p>
                         <hr />
                     </div>
                 </div>
             </div>
         </section>
+
 
         <section class="form-section">
             <div class="container">
@@ -560,7 +545,13 @@
                 </div>
             </div>
         </section>
+        <!--      down counter-->
+        <div class="sections">
+            <div id="section06" class="demo">
 
+                <a href="#footer"><span></span>Scroll</a>
+            </div>
+        </div>
         <section id="locations">
             <div class="container-fluid">
                 <!-- <iframe class="embed-responsive-item" src="..."></iframe> -->
@@ -589,7 +580,7 @@
 
 
         <!-- Footer -->
-        <footer class="ftco-footer ftco-bg-dark ftco-section" id="footer">
+        <footer class="ftco-footer ftco-bg-dark ftco-section">
             <div class="container">
                 <div class="row mb-5">
                     <div class="col-md-6 col-lg-3">
@@ -597,11 +588,8 @@
                             <h2 class="ftco-heading-2">
                                 Questions?
 
-                                <p><a href="../home/faq" class="btn btn-success  btn-sm px-4 py-3 mt-3">F.A.Q</a></p>
+                                <p><a href="../home/faq" class="btn btn-success  btn-sm px-4 py-3 mt-3">Check Out Our F.A.Q Section!</a></p>
                             </h2>
-
-
-
                             <div class="block-23 mb-3">
                                 <ul>
                                     <li><span class="icon icon-map-marker"></span><span class="text">550 East Spring St.Columbus, OH 43215 (614) 287-5353</span></li>
@@ -615,9 +603,6 @@
                                 </ul>
                             </div>
                         </div>
-
-                        <!--Counter -->
-
 
                         <div class="con">
                             <p>This page</p>
@@ -642,6 +627,9 @@
 
 
 
+
+
+
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <div class="ftco-footer-widget mb-5">
@@ -649,7 +637,7 @@
                             <div class="block-21 mb-4 d-flex">
                                 <a class="blog-img mr-4" style="background-image: url(img/image_1.jpg);"></a>
                                 <div class="text">
-                                    <h3 class="heading"><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a></h3>
+                                    <h3 class="heading"><a href="#">Come check out the Georgia Brooks University blog for tips on surviving college and posts by our faculty and students!</a></h3>
                                     <div class="meta">
                                         <div><a href="#"><span class="icon-calendar"></span> June 22, 2020</a></div>
                                         <div><a href="#"><span class="icon-person"></span> Admin</a></div>
@@ -660,7 +648,7 @@
                             <div class="block-21 mb-5 d-flex">
                                 <a class="blog-img mr-4" style="background-image: url(img/image_2.jpg);"></a>
                                 <div class="text">
-                                    <h3 class="heading"><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a></h3>
+                                    <h3 class="heading"><a href="#">Having a grandpa who invented a board game may seem like it’s all fun and games but it’s harder than it sounds.</a></h3>
                                     <div class="meta">
                                         <div><a href="#"><span class="icon-calendar"></span> June 23, 2020</a></div>
                                         <div><a href="#"><span class="icon-person"></span> Admin</a></div>
@@ -676,18 +664,21 @@
                         <div class="ftco-footer-widget mb-5 ml-md-4">
                             <h2 class="ftco-heading-2">Links</h2>
                             <ul class="list-unstyled">
-                                <li><a href="../home"><span class="ion-ios-arrow-round-forward mr-2"></span>Home</a></li>
-                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>About</a></li>
-                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Services</a></li>
-                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Departments</a></li>
-                                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Contact</a></li>
+                                <li><a href="../home/index"><span class="ion-ios-arrow-round-forward mr-2"></span>Home</a></li>
+                                <li><a href="../home/about"><span class="ion-ios-arrow-round-forward mr-2"></span>About</a></li>
+                                <li><a href="../home/services"><span class="ion-ios-arrow-round-forward mr-2"></span>Services</a></li>
+                                <li><a href="../home/academics"><span class="ion-ios-arrow-round-forward mr-2"></span>Departments</a></li>
+                                <li><a href="../home/contact"><span class="ion-ios-arrow-round-forward mr-2"></span>Contact</a></li>
                             </ul>
                         </div>
                     </div>
+
+
+
                     <!-- Subscribe -->
-                    <div class="col-md-6 col-lg-3">
+                    <div class="col-md-6 col-lg-3" id="footer">
                         <div class="ftco-footer-widget mb-5">
-                            <h2 class="ftco-heading-2">Subscribe to Us!</h2>
+                            <h2 class="ftco-heading-2">Subscribe To Us!</h2>
                             <form action="#" class="subscribe-form">
                                 <div class="form-group">
                                     <input type="text" class="form-control mb-2 text-center" placeholder="Enter email address">
@@ -702,19 +693,17 @@
                                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
                                 <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
                             </ul>
-
-
-
                         </div>
 
                         <div class="container-fluid">
                             <!-- <iframe class="embed-responsive-item" src="..."></iframe> -->
                             <!--GBUniversity link -->
 
-                            <iframe src="https://www.google.com/maps/d/embed?mid=1tTNgwQYFK68DlY8Y7zcX7xG6XDIE-B7t" width="200" height="200"></iframe>
+                            <iframe src="https://www.google.com/maps/d/embed?mid=1tTNgwQYFK68DlY8Y7zcX7xG6XDIE-B7t" width="90%" height="180"></iframe>
 
 
                         </div>
+
 
                         <!-- Down Arrow-->
 
@@ -722,19 +711,22 @@
 
 
 
-                        <a href="#" class="to-top">Back to top</a>
-
+                        <a href="#" class="to-top"><strong>Back to top</strong></a>
 
 
                     </div>
+
+
+                    <!--Copyright -->
+
                 </div>
-                <!--Copyright -->
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <p>Copyright &copy; All rights reserved | This website  is made by Group B </p>
 
                     </div>
                 </div>
+
             </div>
         </footer>
 
@@ -769,7 +761,7 @@
 
 
         <!--Javascript Links -->
-
+        <script src="~/js/scrollDown.js"></script>
         <script src="~/js/counter.js"></script>
         <script src="~/js/jquery.min.js"></script>
         <script src="~/js/jquery-migrate-3.0.1.min.js"></script>
@@ -786,9 +778,10 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
         <script src="~/js/google-map.js"></script>
         <script src="~/js/main.js"></script>
-        <script src="~/js/faq.js"></script>
 
     </body>
 </html>
+
+
 
 }

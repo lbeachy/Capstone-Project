@@ -13,7 +13,7 @@ namespace GroupBCapstoneProject.Controllers.Helpers
     public class RegistrationManager
     {
         private readonly AppDbContext _context;
-        private decimal hourlyTuition = 300;
+        private readonly decimal hourlyTuition = 300;
 
         public RegistrationManager(AppDbContext context)
         {
@@ -161,7 +161,7 @@ namespace GroupBCapstoneProject.Controllers.Helpers
             return creditHours * hourlyTuition;
         }
 
-        private Student GetStudentByStudentID(int studentID)
+        public Student GetStudentByStudentID(int studentID)
         {
             var students = _context.Students
                 .Where(s => s.ID.Equals(studentID))
@@ -181,5 +181,15 @@ namespace GroupBCapstoneProject.Controllers.Helpers
             return students[0];
         }
 
+        public List<Enrollment> GetStudentEnrollments(int studentID)
+        {
+            var studentEnrollments = from enrollment in _context.Enrollments
+                                     join student in _context.Students on enrollment.StudentID equals student.ID
+                                     where student.ID.Equals(studentID)
+                                     select new Enrollment { StudentID = student.ID, CourseID = enrollment.CourseID, Date = enrollment.Date };
+
+            List<Enrollment> enrollments = studentEnrollments.ToList();
+            return enrollments;
+        }
     }
 }

@@ -4,10 +4,12 @@
 
 @{
     Layout = null;
-
 }
 
 @{
+
+    <!--    /////-->
+
     <!DOCTYPE html>
     <!--
     Template Name: Capstone Project, Summer,2020
@@ -51,7 +53,7 @@
         <!-- External CSS Stylesheet -->
         <link href="~/styles/layout.css" rel="stylesheet" type="text/css">
 
-        <link rel="icon" href="~/favicon.ico">
+        <link rel="icon" href="favicon.ico">
 
         <link rel="stylesheet" href="~/css/open-iconic-bootstrap.min.css">
         <link rel="stylesheet" href="~/css/animate.css">
@@ -67,8 +69,20 @@
         <link rel="stylesheet" href="~/css/flaticon.css">
         <link rel="stylesheet" href="~/css/icomoon.css">
         <link rel="stylesheet" href="~/css/style.css">
-        <link rel="stylesheet" href="~/css/faq.css">
         <link rel="stylesheet" href="~/styles/styleCon.css">
+
+
+
+        <!--     athletics links-->
+
+        <link rel="stylesheet" href="~/styles/styleAthletics.css">
+        <link rel="stylesheet" type="text/css" href="~/styles/animateAthletics.css">
+        <style>
+            .wow:first-child {
+                visibility: hidden;
+            }
+        </style>
+
 
     </head>
     <body>
@@ -261,12 +275,7 @@
                 </button>
 
 
-                <!--
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="oi oi-menu"></span> Menu
-                  </button>
 
-                 -->
                 <!--Navigation Links-->
 
 
@@ -357,217 +366,290 @@
 
 
                     <!--Align on Right-->
+                    <!-- Login-->
 
                     <li class="nav-item">
                         <a href="../home/login" class="nav-link bg-success px-3" role="button" aria-haspopup="true" aria-expanded="false"><strong>Login</strong></a>
 
                     </li>
 
+
+
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control  mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-info btn-lg my-2 my-sm-0" type="submit">Search</button>
                     </form>
 
-
                 </div>
-
-
-
 
             </nav>
 
-
-
         </div>
-
         <!--end navbar-->
-        <!--Carousel section starts here-->
 
-        <section class="home-slider owl-carousel">
-
-            <div class="slider-item" style="background-image:url(gallery/img1cropped.jpg);">
-                <div class="overlay"></div>
-                <div class="container">
-                    <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
-                        <div class="col-md-6 ftco-animate">
-
-
-
-
-                            <h1 class="mb-4">Welcome to Georgia Brooks University</h1>
-
-                            <p>“At Georgia Brooks, we teach the best scientists, CEOs, writers and cooks!”</p>
-                            <a href="../home/contact" class="btn btn-primary px-4 py-3 mt-3">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="slider-item" style="background-image:url(img/bg_2.jpg);">
-                <div class="overlay"></div>
-                <div class="container">
-                    <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
-                        <div class="col-md-6 ftco-animate">
-
-                            <h1 class="mb-4">Welcome to Georgia Brooks University</h1>
-                            <p>“At Georgia Brooks, we teach the best scientists, CEOs, writers and cooks!”</p>
-                            <p><a href="../home/contact" class="btn btn-primary px-4 py-3 mt-3">Contact Us</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="slider-item" style="background-image:url(img/bg_3.jpg);">
-                <div class="overlay"></div>
-                <div class="container">
-                    <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
-                        <div class="col-md-6 ftco-animate">
-
-                            <h1 class="mb-4">Welcome to Georgia Brooks University</h1>
-                            <p>“At Georgia Brooks, we teach the best scientists, CEOs, writers and cooks!”</p>
-                            <p><a href="../home/contact" class="btn btn-primary px-4 py-3 mt-3">Contact Us</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- scroll down  -->
-
-
-        <div class="sections">
-            <div id="section06" class="demo">
-
-                <a href="#faq"><span></span>Scroll</a>
-            </div>
+        <div class="header1">
+            <h1>GBU Athletics</h1>
         </div>
 
+        <div class="mascot">
+            <img src="~/imgAthletics/beemas.png" alt="Maskot" class="responsive" width="200" height="100">
+        </div>
 
-        <!--FAQ section -->
-
-        <section id="faq">
-
+        <!-- Start About -->
+        <section class="about" id="about">
             <div class="container">
-
-                <h1 class="faq">F.A.Q Section</h1>
-
-
-                <!-- Accordion Starts-->
-                <div class="acc">
-                    <h3>Question 1: How much does GBU cost?</h3>
-                    <div class="content">
-                        <div class="content-inner">
-                            <p>It depends on your major and degree but we work with students of all income levels.</p>
+                <div class="content">
+                    <div class="box wow bounceInUp">
+                        <div class="inner">
+                            <div class="img">
+                                <img src="~/imgAthletics/athletics.jpg" alt="about" />
+                            </div>
+                            <div class="text">
+                                <h4>Title Here</h4>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Accordian -->
-                <div class="acc">
-                    <h3>Question 2: What GPA or test scores do you require?</h3>
-                    <div class="content">
-                        <div class="content-inner">
-                            <p>You must have at least a 4.5 GPA and perfect SAT and ACT scores to be considered for GBU.</p>
+                    <div class="box wow bounceInUp" data-wow-delay="0.2s">
+                        <div class="inner">
+                            <div class="img">
+                                <img src="~/imgAthletics/girls1.jpg" alt="about" />
+                            </div>
+                            <div class="text">
+                                <h4>Title Here</h4>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.It has survived not only five centuries............</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Accordian -->
-                <div class="acc">
-                    <h3>Question 3:	Do you offer Graduate or Doctoral programs?</h3>
-                    <div class="content">
-                        <div class="content-inner">
-                            <p>Yes we do! We offer both programs for all fields.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Accordian -->
-                <div class="acc">
-                    <h3>Question 4: Do you offer financial aid?</h3>
-                    <div class="content">
-                        <div class="content-inner">
-                            <p>Yes, just fill out your FAFSA.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Accordian -->
-                <div class="acc">
-                    <h3>Question 5: Do you offer on-campus housing?</h3>
-                    <div class="content">
-                        <div class="content-inner">
-                            <p>Yes, we have several student apartment complexes and fraternity/sorority houses near campus.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Accordian -->
-                <div class="acc">
-                    <h3>Question 6: Does GBU allow campus tours for visitors?</h3>
-                    <div class="content">
-                        <div class="content-inner">
-                            <p>Yes! Everyone is allowed to witness the splendor of our beautiful campus.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Accordian -->
-                <div class="acc">
-                    <h3>Question 7:Does GBU allow summer classes?</h3>
-                    <div class="content">
-                        <div class="content-inner">
-                            <p>Does GBU allow summer classes?</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Accordian -->
-                <div class="acc">
-                    <h3>Question 8:Does GBU offer employee discounts on tuition? </h3>
-                    <div class="content">
-                        <div class="content-inner">
-                            <p>Yes! Employees receive a 50% off discount on their tuition. GBU takes care of our fam!</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Accordian -->
-                <div class="acc">
-                    <h3>Question 9:What previously taken college courses can transfer to GBU? </h3>
-                    <div class="content">
-                        <div class="content-inner">
-                            <p>Yes! Courses with a grade of B of higher transfer to GBU!</p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="acc">
-                    <h3>Question 10: Is Georgia Brooks bridge related to Georgia Brooks University?</h3>
-                    <div class="content">
-                        <div class="content-inner">
-                            <p>Yes! Our university donated the money to build the bridge and the mayor decided to name the bridge after our school. GBU gives back to our community! Georgia Brooks Bridge sounds so much better than Alexander Hamilton bridge anyway.</p>
+                    <div class="box wow bounceInUp" data-wow-delay="0.3s">
+                        <div class="inner">
+                            <div class="img">
+                                <img src="~/imgAthletics/brooklyn.jpg" alt="about" />
+                            </div>
+                            <div class="text">
+                                <h4>Title Here</h4>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
         </section>
+        <!-- End About -->
+        <!--      down counter-->
+        <div class="sections7">
+            <div id="section07" class="demo">
+                <a href="#service">
+                    <span></span>
+                    <span></span>
+                    <span></span>Scroll
+                </a>
 
+            </div>
+        </div>
 
+        <!-- Start Service -->
+        <section class="service" id="service">
+            <div class="container">
+                <div class="content">
+                    <div class="text box wow slideInLeft">
+                        <h2>Services</h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+                        <a href="" class="btn">Start Now</a>
+                    </div>
+                    <div class="accordian box wow slideInRight">
+                        <div class="accordian-container active">
+                            <div class="head">
+                                <h4>Title here</h4>
+                                <span class="fa fa-angle-down"></span>
+                            </div>
+                            <div class="body">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+                            </div>
+                        </div>
+                        <div class="accordian-container">
+                            <div class="head">
+                                <h4>Title here</h4>
+                                <span class="fa fa-angle-up"></span>
+                            </div>
+                            <div class="body">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+                            </div>
+                        </div>
+                        <div class="accordian-container">
+                            <div class="head">
+                                <h4>Title here</h4>
+                                <span class="fa fa-angle-up"></span>
+                            </div>
+                            <div class="body">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+                            </div>
+                        </div>
+                        <div class="accordian-container">
+                            <div class="head">
+                                <h4>Title here</h4>
+                                <span class="fa fa-angle-up"></span>
+                            </div>
+                            <div class="body">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Service -->
+        <!--      down counter-->
+        <div class="sections7">
+            <div id="section07" class="demo">
+                <a href="#classes">
+                    <span></span>
+                    <span></span>
+                    <span></span>Scroll
+                </a>
 
-
-        <!-- scroll down  -->
-
-
-        <div class="sections">
-            <div id="section06" class="demo">
-
-                <a href="#footer"><span></span>Scroll</a>
             </div>
         </div>
 
 
+        <!-- Start Classes -->
+        <section class="classes" id="classes">
+            <div class="container">
+                <div class="content">
+                    <div class="box img wow slideInLeft">
+                        <img src="~/imgAthletics/girls.jpg" alt="classes" />
+                    </div>
+                    <div class="box text wow slideInRight">
+                        <h2>GBU offer variety athletics Classes</h2>
 
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
+                        <div class="class-items">
+                            <div class="item wow bounceInUp">
+                                <div class="item-img">
+                                    <img src="~/imgAthletics/bascet.jpg" alt="classes" />
+
+                                </div>
+                                <div class="item-text">
+                                    <h4>Title here</h4>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                    <a href="">Get Details</a>
+                                </div>
+                            </div>
+                            <div class="item wow bounceInUp">
+                                <div class="item-text">
+                                    <h4>Title here</h4>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                    <a href="">Get Details</a>
+                                </div>
+                                <div class="item-img">
+                                    <img src="~/imgAthletics/soccer.jpg" alt="classes" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Classes -->
+        <!--      down counter-->
+        <div class="sections7">
+            <div id="section07" class="demo">
+                <a href="#schedule">
+                    <span></span>
+                    <span></span>
+                    <span></span>Scroll
+                </a>
+
+            </div>
+        </div>
+
+
+        <!-- Start Today -->
+        <section class="start-today">
+            <div class="container">
+                <div class="content">
+                    <div class="box text wow slideInLeft">
+                        <h2>Title here</h2>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
+                        <a href="" class="btn">Start Now</a>
+                    </div>
+                    <div class="box img wow slideInRight">
+                        <img src="~/imgAthletics/run.jpg" alt="start today" />
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- End Start Today -->
+        <!-- Start Schedule -->
+        <section class="schedule" id="schedule">
+            <div class="container">
+                <div class="content">
+                    <div class="box text wow slideInLeft">
+                        <h2>Title here</h2>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
+                        </p>
+                        <img src="~/imgAthletics/123.jpg" alt="schedule" />
+                    </div>
+                    <div class="box timing wow slideInRight">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td class="day">Monday</td>
+                                    <td><strong>9:00 AM</strong></td>
+                                    <td>Women's Soccer <br /> 9:00 to 10:00 AM</td>
+                                    <td>GBU Stadium</td>
+                                </tr>
+                                <tr>
+                                    <td class="day">Tuesday</td>
+                                    <td><strong>11:00 AM</strong></td>
+                                    <td>Football <br /> 11:00 AM to 1:00 PM</td>
+                                    <td>GBU Stadium</td>
+                                </tr>
+                                <tr>
+                                    <td class="day">Wednesday</td>
+                                    <td><strong>6:00 PM</strong></td>
+                                    <td>Men's Basketball <br /> 6:00 to 8:00 PM</td>
+                                    <td>GBU Sport Hall</td>
+                                </tr>
+                                <tr>
+                                    <td class="day">Thursday</td>
+                                    <td><strong>6:00 PM</strong></td>
+                                    <td>Women's Basketball <br /> 6:00 to 8:00 PM</td>
+                                    <td>GBU Sport Hall</td>
+                                </tr>
+                                <tr>
+                                    <td class="day">Friday</td>
+                                    <td><strong>9:00 AM</strong></td>
+                                    <td>Road Runner <br /> 9:00 to 10:00 AM</td>
+                                    <td>GBU Stadium</td>
+                                </tr>
+                                <tr>
+                                    <td class="day">Saturday</td>
+                                    <td><strong>11:00 AM</strong></td>
+                                    <td>Men's Soccer <br /> 11:00 AM to 1:00 PM</td>
+                                    <td>GBU Stadium</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Schedule -->
+        <!--      down counter-->
+        <div class="sections7">
+            <div id="section07" class="demo">
+                <a href="#footer">
+                    <span></span>
+                    <span></span>
+                    <span></span>Scroll
+                </a>
+
+            </div>
+        </div>
 
         <!-- Footer -->
         <footer class="ftco-footer ftco-bg-dark ftco-section">
@@ -722,6 +804,10 @@
 
 
 
+
+
+
+
         <!-- loader -->
         <!-- Bootstrap (JQuery) -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -737,11 +823,6 @@
 
 
 
-        <!-- Make The Navigation Bar fixed on top once the header is scrolled up -->
-        <script type="text/javascript" src="~/scripts/jquery.navbar-fix-top.js"></script>
-
-        <!-- Position Sticky Social Bar after cover image is scrolled up -->
-        <script type="text/javascript" src="~/scripts/jquery.sticky-social-bar.js"></script>
 
 
 
@@ -768,6 +849,57 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
         <script src="~/js/google-map.js"></script>
         <script src="~/js/main.js"></script>
+
+        <!-- jquery -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+	$(document).ready(function(){
+
+      $(".accordian-container").click(function(){
+      	$(".accordian-container").children(".body").slideUp();
+      	$(".accordian-container").removeClass("active")
+      	$(".accordian-container").children(".head").children("span").removeClass("fa-angle-down").addClass("fa-angle-up")
+      	$(this).children(".body").slideDown();
+      	$(this).addClass("active")
+      	$(this).children(".head").children("span").removeClass("fa-angle-up").addClass("fa-angle-down")
+      })
+
+       $(".nav ul li a, .go-down").click(function(event){
+         if(this.hash !== ""){
+
+              event.preventDefault();
+
+              var hash=this.hash;
+
+              $('html,body').animate({
+                scrollTop:$(hash).offset().top
+              },500 , function(){
+                 window.location.hash=hash;
+              });
+
+              // add active class in navigation
+              $(".nav ul li a").removeClass("active")
+              $(this).addClass("active")
+         }
+      })
+})
+
+        </script>
+        <script src="~/js/animateAthletics.js"></script>
+        <script>
+    wow = new WOW(
+      {
+        animateClass: 'animated',
+        offset:       0,
+      }
+    );
+    wow.init();
+        </script>
+
+
+
+
 
     </body>
 </html>
