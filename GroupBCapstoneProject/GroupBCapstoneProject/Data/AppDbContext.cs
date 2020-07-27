@@ -31,7 +31,7 @@ namespace GroupBCapstoneProject.Data
         public DbSet<GroupBCapstoneProject.Data.Enrollment> Enrollments { get; set; }
         public DbSet<GroupBCapstoneProject.Data.CourseForRegistration> CourseForRegistrations { get; set; }
         public DbSet<GroupBCapstoneProject.AuthorizationRequirements.ApplicationUser> AspNetUsers { get; set; }
-        public DbSet<GroupBCapstoneProject.Models.Payments> Payments { get; set; }
+        public DbSet<GroupBCapstoneProject.Models.Payment> Payments { get; set; }
 
     }
 }

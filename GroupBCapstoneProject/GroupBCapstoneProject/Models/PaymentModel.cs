@@ -25,7 +25,9 @@ namespace GroupBCapstoneProject.Models
         [CreditCard]
         [DisplayName("Card Number")]
         public string CardNumber { get; set; }
-        [DisplayName("CVV")]        
+        [DisplayName("CVV")]    
+        [MinLength(3)]
+        [MaxLength(4)]
         public string CardCode { get; set; }
         public string Month { get; set; }
         public string Year { get; set; }

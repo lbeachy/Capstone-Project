@@ -21,7 +21,7 @@
     <div><p>Your current balance is $@ViewData["StudentBalance"]</p></div>
 
     <h2>Enrolled Classes</h2>
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <th>Course Number</th>
@@ -75,6 +75,7 @@
                     <td>@course.DisplayFriday()</td>
                     <td>@course.DisplaySaturday()</td>
                 </tr>
+                
             }
         </tbody>
     </table>

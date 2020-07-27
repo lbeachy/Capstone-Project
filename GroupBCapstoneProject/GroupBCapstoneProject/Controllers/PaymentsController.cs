@@ -9,6 +9,7 @@ using GroupBCapstoneProject.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace GroupBCapstoneProject.Controllers
 {
@@ -50,9 +51,13 @@ namespace GroupBCapstoneProject.Controllers
 
             if (result != null && result.ResultCode == AuthorizeNet.Api.Contracts.V1.messageTypeEnum.Ok)
             {
-                PaymentManager manager = new PaymentManager(_context);
+                PaymentManager paymentManager = new PaymentManager(_context);
                 string userID = _userManager.GetUserId(User);
-                manager.SubtractBalanceFromStudent(userID, result.AmountPaid);
+                paymentManager.SubtractBalanceFromStudent(userID, result.AmountPaid);
+
+                RegistrationManager registrationManager = new RegistrationManager(_context);
+                int studentID = registrationManager.GetStudentIDFromUserID(userID);
+                paymentManager.CreatePaymentForDatabase(result, studentID);
 
                 TransactionResponse viewmodel = new TransactionResponse()
                 {
@@ -69,7 +74,7 @@ namespace GroupBCapstoneProject.Controllers
                 {
                     viewmodel
                 };
-                return View("TransactionResponse", viewmodelList);
+                return RedirectToAction("TransactionResponse", new { viewmodelList = JsonConvert.SerializeObject(viewmodelList) });
             }
             else
             {
@@ -88,6 +93,19 @@ namespace GroupBCapstoneProject.Controllers
                 }
 
             }
+        }
+
+        [HttpGet]
+        public IActionResult TransactionResponse(string viewmodelList)
+        {
+            List<TransactionResponse> response = JsonConvert.DeserializeObject<List<TransactionResponse>>(viewmodelList);
+            string userID = _userManager.GetUserId(User);
+            RegistrationManager manager = new RegistrationManager(_context);
+            int studentID = manager.GetStudentIDFromUserID(userID);
+            Student student = manager.GetStudentByStudentID(studentID);
+            ViewData["StudentName"] = String.Join(" ", student.FirstName, student.LastName);
+            ViewData["StudentBalance"] = student.Balance;
+            return View("TransactionResponse", response);
         }
     }
 }

@@ -4,11 +4,11 @@
     ViewData["Title"] = "TransactionResponse";
 }
 
-<h1>TransactionResponse</h1>
+<h1>Transaction Response</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
+<h5>Name: @ViewData["StudentName"]</h5>
+<h5>Remaining Balance: @ViewData["StudentBalance"]</h5>
 <table class="table">
     <thead>
         <tr>
@@ -72,11 +72,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ErrorText)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
         </tr>
         }
