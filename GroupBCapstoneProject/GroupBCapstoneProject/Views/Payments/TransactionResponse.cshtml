@@ -1,0 +1,84 @@
+﻿@model IEnumerable<GroupBCapstoneProject.Models.TransactionResponse>
+
+@{
+    ViewData["Title"] = "TransactionResponse";
+}
+
+<h1>TransactionResponse</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ResultCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TransId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ResponseCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MessageCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuthCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+               Amount Paid
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ErrorCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ErrorText)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ResultCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ResponseCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MessageCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuthCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountPaid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ErrorCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ErrorText)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

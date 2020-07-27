@@ -86,8 +86,44 @@ namespace GroupBCapstoneProject.Controllers
             return View();
         }
 
-        public IActionResult Login(string message)
+        public async Task<IActionResult> Login(string message)
         {
+            if (_signInManager.IsSignedIn(User))
+            {
+                string userName = _userManager.GetUserName(User);
+                var user = await _userManager.FindByNameAsync(userName);
+
+                if (user.RoleInSchool.Equals("Student"))
+                {
+                    if (user.CompletedRegistration)
+                    {
+                        return RedirectToAction("Index", "Student");
+                    }
+                    else
+                    {
+                        return RedirectToAction("GetStudentInfo", "Student");
+                    }
+
+                }
+
+                if (user.RoleInSchool.Equals("Faculty"))
+                {
+                    if (user.CompletedRegistration)
+                    {
+                        return RedirectToAction("Index", "Faculty");
+                    }
+                    else
+                    {
+                        return RedirectToAction("GetFacultyInfo", "Faculty");
+                    }
+                }
+
+                if (user.RoleInSchool.Equals("Admin"))
+                {
+                    return RedirectToAction("Index", "Admin");
+                }
+            }
+            
             if (String.IsNullOrEmpty(message))
             {
                 return View();

@@ -55,27 +55,27 @@
                         else
                         { @course.StartTime.ToString();
                     }
-                </td>
-                <td>
-                    @if (course.EndTime.HasValue)
-                    {
-                        @course.EndTime.Value.ToString("T");
+                    </td>
+                    <td>
+                        @if (course.EndTime.HasValue)
+                        {
+                            @course.EndTime.Value.ToString("T");
+                        }
+                        else
+                        { @course.EndTime.ToString();
                     }
-                    else
-                    { @course.EndTime.ToString();
-                }
-                </td>
-                <td>@course.CreditHours</td>
-                <td>@course.BuildingName</td>
-                <td>@course.BuildingNumber</td>
-                <td>@course.DisplayMonday()</td>
-                <td>@course.DisplayTuesday()</td>
-                <td>@course.DisplayWednesday()</td>
-                <td>@course.DisplayThursday()</td>
-                <td>@course.DisplayFriday()</td>
-                <td>@course.DisplaySaturday()</td>
-            </tr>
-        }
+                    </td>
+                    <td>@course.CreditHours</td>
+                    <td>@course.BuildingName</td>
+                    <td>@course.BuildingNumber</td>
+                    <td>@course.DisplayMonday()</td>
+                    <td>@course.DisplayTuesday()</td>
+                    <td>@course.DisplayWednesday()</td>
+                    <td>@course.DisplayThursday()</td>
+                    <td>@course.DisplayFriday()</td>
+                    <td>@course.DisplaySaturday()</td>
+                </tr>
+            }
         </tbody>
     </table>
 
@@ -83,5 +83,6 @@
     @using (Html.BeginForm("Index", "Student", FormMethod.Post))
     {
         <input type="submit" value="Sign up for a class" class="btn btn-dark" name="btnSubmit" />
+        <input type="submit" value="Make a Payment" class="btn btn-dark" name="btnSubmit" />
     }
 }

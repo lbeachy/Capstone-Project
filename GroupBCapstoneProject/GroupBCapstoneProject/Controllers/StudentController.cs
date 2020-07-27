@@ -47,6 +47,8 @@ namespace GroupBCapstoneProject.Controllers
             {
                 case "Sign up for a class":
                     return RedirectToAction("RegisterForCourse");
+                case "Make a Payment":
+                    return RedirectToAction("Index", "Payments");
                 default:
                     break;
             }

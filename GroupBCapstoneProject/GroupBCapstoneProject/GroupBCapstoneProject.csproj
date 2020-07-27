@@ -1,10 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\Academic Calendar111.docx" />
     <Content Remove="wwwroot\css\animate.css" />
     <Content Remove="wwwroot\css\aos.css" />
     <Content Remove="wwwroot\css\bootstrap.min.css" />
@@ -21,6 +22,7 @@
     <Content Remove="wwwroot\css\owl.carousel.min.css" />
     <Content Remove="wwwroot\css\owl.theme.default.min.css" />
     <Content Remove="wwwroot\css\style.css" />
+    <Content Remove="wwwroot\favicon.ico" />
     <Content Remove="wwwroot\fonts\flaticon\font\flaticon.css" />
     <Content Remove="wwwroot\fonts\flaticon\font\Flaticon.eot" />
     <Content Remove="wwwroot\fonts\flaticon\font\flaticon.html" />
@@ -46,6 +48,114 @@
     <Content Remove="wwwroot\fonts\open-iconic\open-iconic.svg" />
     <Content Remove="wwwroot\fonts\open-iconic\open-iconic.ttf" />
     <Content Remove="wwwroot\fonts\open-iconic\open-iconic.woff" />
+    <Content Remove="wwwroot\gallery\acc.png" />
+    <Content Remove="wwwroot\gallery\Accounting Program.png" />
+    <Content Remove="wwwroot\gallery\AccountingProgram.jpg" />
+    <Content Remove="wwwroot\gallery\bg_1.jpg" />
+    <Content Remove="wwwroot\gallery\bg_2.jpg" />
+    <Content Remove="wwwroot\gallery\Business Program.png" />
+    <Content Remove="wwwroot\gallery\Business.png" />
+    <Content Remove="wwwroot\gallery\BusinessProgram.jpg" />
+    <Content Remove="wwwroot\gallery\Computer Science.png" />
+    <Content Remove="wwwroot\gallery\ComputerScience.jpg" />
+    <Content Remove="wwwroot\gallery\CriminalJusticeProgram.jpg" />
+    <Content Remove="wwwroot\gallery\Culinary Program.png" />
+    <Content Remove="wwwroot\gallery\CulinaryProgram.jpg" />
+    <Content Remove="wwwroot\gallery\edu.jpg" />
+    <Content Remove="wwwroot\gallery\edu1cropped.jpg" />
+    <Content Remove="wwwroot\gallery\edu6.jpg" />
+    <Content Remove="wwwroot\gallery\GBU Accounting ..png" />
+    <Content Remove="wwwroot\gallery\GBU Computer Science.png" />
+    <Content Remove="wwwroot\gallery\GBU Criminal Justice.png" />
+    <Content Remove="wwwroot\gallery\GBU Culinary ..png" />
+    <Content Remove="wwwroot\gallery\GBU Marketing.png" />
+    <Content Remove="wwwroot\gallery\GBU Spanish.png" />
+    <Content Remove="wwwroot\gallery\Georgia1.PNG" />
+    <Content Remove="wwwroot\gallery\Georgia2.PNG" />
+    <Content Remove="wwwroot\gallery\Georgia3.PNG" />
+    <Content Remove="wwwroot\gallery\Georgia4.PNG" />
+    <Content Remove="wwwroot\gallery\GroupB2.PNG" />
+    <Content Remove="wwwroot\gallery\img1.jpg" />
+    <Content Remove="wwwroot\gallery\img1.png" />
+    <Content Remove="wwwroot\gallery\img1cropped.jpg" />
+    <Content Remove="wwwroot\gallery\img2.jpg" />
+    <Content Remove="wwwroot\gallery\img4.jpg" />
+    <Content Remove="wwwroot\gallery\img7.png.png" />
+    <Content Remove="wwwroot\gallery\img7cropped.jpg" />
+    <Content Remove="wwwroot\gallery\Marketing Program.jpg" />
+    <Content Remove="wwwroot\gallery\SpanishProgram.jpg" />
+    <Content Remove="wwwroot\gallery\students.jpg" />
+    <Content Remove="wwwroot\imgAthletics\123.jpg" />
+    <Content Remove="wwwroot\imgAthletics\areana.jpg" />
+    <Content Remove="wwwroot\imgAthletics\athletics.jpg" />
+    <Content Remove="wwwroot\imgAthletics\bascet.jpg" />
+    <Content Remove="wwwroot\imgAthletics\basketball.jpg" />
+    <Content Remove="wwwroot\imgAthletics\bee.jpg" />
+    <Content Remove="wwwroot\imgAthletics\bee2.png" />
+    <Content Remove="wwwroot\imgAthletics\bee3.jpg" />
+    <Content Remove="wwwroot\imgAthletics\beemas.png" />
+    <Content Remove="wwwroot\imgAthletics\beeMascot.png" />
+    <Content Remove="wwwroot\imgAthletics\brooklyn.jpg" />
+    <Content Remove="wwwroot\imgAthletics\collegeathletcis.jpg" />
+    <Content Remove="wwwroot\imgAthletics\differ.jpg" />
+    <Content Remove="wwwroot\imgAthletics\girls.jpg" />
+    <Content Remove="wwwroot\imgAthletics\girls1.jpg" />
+    <Content Remove="wwwroot\imgAthletics\run.jpg" />
+    <Content Remove="wwwroot\imgAthletics\soccer.jpg" />
+    <Content Remove="wwwroot\imgAthletics\staduim.jpg" />
+    <Content Remove="wwwroot\img\a1.webp" />
+    <Content Remove="wwwroot\img\a2.webp" />
+    <Content Remove="wwwroot\img\a3.jpg" />
+    <Content Remove="wwwroot\img\about-2.jpg" />
+    <Content Remove="wwwroot\img\about.jpg" />
+    <Content Remove="wwwroot\img\bckd.png" />
+    <Content Remove="wwwroot\img\bd.jpg" />
+    <Content Remove="wwwroot\img\bd1.jpg" />
+    <Content Remove="wwwroot\img\bd11.jpg" />
+    <Content Remove="wwwroot\img\bg_1.jpg" />
+    <Content Remove="wwwroot\img\bg_2.jpg" />
+    <Content Remove="wwwroot\img\bg_3.jpg" />
+    <Content Remove="wwwroot\img\bg_5.jpg" />
+    <Content Remove="wwwroot\img\calimg.webp" />
+    <Content Remove="wwwroot\img\calimg1.jpg" />
+    <Content Remove="wwwroot\img\cevent.jpg" />
+    <Content Remove="wwwroot\img\chbears.png" />
+    <Content Remove="wwwroot\img\cinbeng.png" />
+    <Content Remove="wwwroot\img\coldes.png" />
+    <Content Remove="wwwroot\img\collion.jpg" />
+    <Content Remove="wwwroot\img\course-1.jpg" />
+    <Content Remove="wwwroot\img\course-2.jpg" />
+    <Content Remove="wwwroot\img\course-3.jpg" />
+    <Content Remove="wwwroot\img\course-4.jpg" />
+    <Content Remove="wwwroot\img\course-5.jpg" />
+    <Content Remove="wwwroot\img\course-6.jpg" />
+    <Content Remove="wwwroot\img\course-7.jpg" />
+    <Content Remove="wwwroot\img\course-8.jpg" />
+    <Content Remove="wwwroot\img\enginner.jpg" />
+    <Content Remove="wwwroot\img\Gandalf.jpg" />
+    <Content Remove="wwwroot\img\help.jpg" />
+    <Content Remove="wwwroot\img\image_1.jpg" />
+    <Content Remove="wwwroot\img\image_2.jpg" />
+    <Content Remove="wwwroot\img\image_3.jpg" />
+    <Content Remove="wwwroot\img\image_4.jpg" />
+    <Content Remove="wwwroot\img\image_5.jpg" />
+    <Content Remove="wwwroot\img\image_6.jpg" />
+    <Content Remove="wwwroot\img\img1.jpeg" />
+    <Content Remove="wwwroot\img\img2.jpg" />
+    <Content Remove="wwwroot\img\img3.jpeg" />
+    <Content Remove="wwwroot\img\laptop.jpeg" />
+    <Content Remove="wwwroot\img\ohio.png" />
+    <Content Remove="wwwroot\img\party.jpg" />
+    <Content Remove="wwwroot\img\Sarine.jpg" />
+    <Content Remove="wwwroot\img\teacher-1.jpg" />
+    <Content Remove="wwwroot\img\teacher-2.jpg" />
+    <Content Remove="wwwroot\img\teacher-3.jpg" />
+    <Content Remove="wwwroot\img\teacher-4.jpg" />
+    <Content Remove="wwwroot\img\teacher-5.jpg" />
+    <Content Remove="wwwroot\img\teacher-6.jpg" />
+    <Content Remove="wwwroot\img\teacher-7.jpg" />
+    <Content Remove="wwwroot\img\teacher-8.jpg" />
+    <Content Remove="wwwroot\js\animateAthletics.js" />
     <Content Remove="wwwroot\js\aos.js" />
     <Content Remove="wwwroot\js\bootstrap.min.js" />
     <Content Remove="wwwroot\js\counter.js" />
@@ -63,10 +173,36 @@
     <Content Remove="wwwroot\js\owl.carousel.min.js" />
     <Content Remove="wwwroot\js\popper.min.js" />
     <Content Remove="wwwroot\js\scrollax.min.js" />
+    <Content Remove="wwwroot\js\scrollDown.js" />
+    <Content Remove="wwwroot\simg\bckd.png" />
+    <Content Remove="wwwroot\simg\bd.jpg" />
+    <Content Remove="wwwroot\simg\bd11.jpg" />
+    <Content Remove="wwwroot\simg\help.jpg" />
+    <Content Remove="wwwroot\simg\img1.jpeg" />
+    <Content Remove="wwwroot\simg\img2.jpg" />
+    <Content Remove="wwwroot\simg\img3.jpeg" />
+    <Content Remove="wwwroot\simg\laptop.jpeg" />
+    <Content Remove="wwwroot\sservice\Academic Calendar111.docx" />
+    <Content Remove="wwwroot\sstyle.css" />
+    <Content Remove="wwwroot\styles\animateAthletics.css" />
     <Content Remove="wwwroot\styles\layout.css" />
+    <Content Remove="wwwroot\styles\styleAthletics.css" />
+    <Content Remove="wwwroot\styles\styleCon.css" />
+    <Content Remove="wwwroot\styles\styleEvent.css" />
   </ItemGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\Academic Calendar111.docx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Academic Calendar111.docx" />
+    <None Include="wwwroot\Brochures\Accounting Program.pdf" />
+    <None Include="wwwroot\Brochures\ComputerScience.pdf" />
+    <None Include="wwwroot\Brochures\Criminal Justice Program.pdf" />
+    <None Include="wwwroot\Brochures\Culinary Program.pdf" />
+    <None Include="wwwroot\Brochures\Marketing Program.pdf" />
+    <None Include="wwwroot\Brochures\Spanish Program.pdf" />
     <None Include="wwwroot\css\animate.css" />
     <None Include="wwwroot\css\aos.css" />
     <None Include="wwwroot\css\bootstrap.min.css" />
@@ -83,6 +219,7 @@
     <None Include="wwwroot\css\owl.carousel.min.css" />
     <None Include="wwwroot\css\owl.theme.default.min.css" />
     <None Include="wwwroot\css\style.css" />
+    <None Include="wwwroot\favicon.ico" />
     <None Include="wwwroot\fonts\flaticon\font\flaticon.css" />
     <None Include="wwwroot\fonts\flaticon\font\Flaticon.eot" />
     <None Include="wwwroot\fonts\flaticon\font\flaticon.html" />
@@ -108,11 +245,13 @@
     <None Include="wwwroot\fonts\open-iconic\open-iconic.svg" />
     <None Include="wwwroot\fonts\open-iconic\open-iconic.ttf" />
     <None Include="wwwroot\fonts\open-iconic\open-iconic.woff" />
+    <None Include="wwwroot\gallery\acc.png" />
     <None Include="wwwroot\gallery\Accounting Program.png" />
     <None Include="wwwroot\gallery\AccountingProgram.jpg" />
     <None Include="wwwroot\gallery\bg_1.jpg" />
     <None Include="wwwroot\gallery\bg_2.jpg" />
     <None Include="wwwroot\gallery\Business Program.png" />
+    <None Include="wwwroot\gallery\Business.png" />
     <None Include="wwwroot\gallery\BusinessProgram.jpg" />
     <None Include="wwwroot\gallery\Computer Science.png" />
     <None Include="wwwroot\gallery\ComputerScience.jpg" />
@@ -122,6 +261,12 @@
     <None Include="wwwroot\gallery\edu.jpg" />
     <None Include="wwwroot\gallery\edu1cropped.jpg" />
     <None Include="wwwroot\gallery\edu6.jpg" />
+    <None Include="wwwroot\gallery\GBU Accounting ..png" />
+    <None Include="wwwroot\gallery\GBU Computer Science.png" />
+    <None Include="wwwroot\gallery\GBU Criminal Justice.png" />
+    <None Include="wwwroot\gallery\GBU Culinary ..png" />
+    <None Include="wwwroot\gallery\GBU Marketing.png" />
+    <None Include="wwwroot\gallery\GBU Spanish.png" />
     <None Include="wwwroot\gallery\Georgia1.PNG" />
     <None Include="wwwroot\gallery\Georgia2.PNG" />
     <None Include="wwwroot\gallery\Georgia3.PNG" />
@@ -137,12 +282,44 @@
     <None Include="wwwroot\gallery\Marketing Program.jpg" />
     <None Include="wwwroot\gallery\SpanishProgram.jpg" />
     <None Include="wwwroot\gallery\students.jpg" />
+    <None Include="wwwroot\imgAthletics\123.jpg" />
+    <None Include="wwwroot\imgAthletics\areana.jpg" />
+    <None Include="wwwroot\imgAthletics\athletics.jpg" />
+    <None Include="wwwroot\imgAthletics\bascet.jpg" />
+    <None Include="wwwroot\imgAthletics\basketball.jpg" />
+    <None Include="wwwroot\imgAthletics\bee.jpg" />
+    <None Include="wwwroot\imgAthletics\bee2.png" />
+    <None Include="wwwroot\imgAthletics\bee3.jpg" />
+    <None Include="wwwroot\imgAthletics\beemas.png" />
+    <None Include="wwwroot\imgAthletics\beeMascot.png" />
+    <None Include="wwwroot\imgAthletics\brooklyn.jpg" />
+    <None Include="wwwroot\imgAthletics\collegeathletcis.jpg" />
+    <None Include="wwwroot\imgAthletics\differ.jpg" />
+    <None Include="wwwroot\imgAthletics\girls.jpg" />
+    <None Include="wwwroot\imgAthletics\girls1.jpg" />
+    <None Include="wwwroot\imgAthletics\run.jpg" />
+    <None Include="wwwroot\imgAthletics\soccer.jpg" />
+    <None Include="wwwroot\imgAthletics\staduim.jpg" />
+    <None Include="wwwroot\img\a1.webp" />
+    <None Include="wwwroot\img\a2.webp" />
+    <None Include="wwwroot\img\a3.jpg" />
     <None Include="wwwroot\img\about-2.jpg" />
     <None Include="wwwroot\img\about.jpg" />
+    <None Include="wwwroot\img\bckd.png" />
+    <None Include="wwwroot\img\bd.jpg" />
+    <None Include="wwwroot\img\bd1.jpg" />
+    <None Include="wwwroot\img\bd11.jpg" />
     <None Include="wwwroot\img\bg_1.jpg" />
     <None Include="wwwroot\img\bg_2.jpg" />
     <None Include="wwwroot\img\bg_3.jpg" />
     <None Include="wwwroot\img\bg_5.jpg" />
+    <None Include="wwwroot\img\calimg.webp" />
+    <None Include="wwwroot\img\calimg1.jpg" />
+    <None Include="wwwroot\img\cevent.jpg" />
+    <None Include="wwwroot\img\chbears.png" />
+    <None Include="wwwroot\img\cinbeng.png" />
+    <None Include="wwwroot\img\coldes.png" />
+    <None Include="wwwroot\img\collion.jpg" />
     <None Include="wwwroot\img\course-1.jpg" />
     <None Include="wwwroot\img\course-2.jpg" />
     <None Include="wwwroot\img\course-3.jpg" />
@@ -151,13 +328,21 @@
     <None Include="wwwroot\img\course-6.jpg" />
     <None Include="wwwroot\img\course-7.jpg" />
     <None Include="wwwroot\img\course-8.jpg" />
+    <None Include="wwwroot\img\enginner.jpg" />
     <None Include="wwwroot\img\Gandalf.jpg" />
+    <None Include="wwwroot\img\help.jpg" />
     <None Include="wwwroot\img\image_1.jpg" />
     <None Include="wwwroot\img\image_2.jpg" />
     <None Include="wwwroot\img\image_3.jpg" />
     <None Include="wwwroot\img\image_4.jpg" />
     <None Include="wwwroot\img\image_5.jpg" />
     <None Include="wwwroot\img\image_6.jpg" />
+    <None Include="wwwroot\img\img1.jpeg" />
+    <None Include="wwwroot\img\img2.jpg" />
+    <None Include="wwwroot\img\img3.jpeg" />
+    <None Include="wwwroot\img\laptop.jpeg" />
+    <None Include="wwwroot\img\ohio.png" />
+    <None Include="wwwroot\img\party.jpg" />
     <None Include="wwwroot\img\Sarine.jpg" />
     <None Include="wwwroot\img\teacher-1.jpg" />
     <None Include="wwwroot\img\teacher-2.jpg" />
@@ -167,6 +352,7 @@
     <None Include="wwwroot\img\teacher-6.jpg" />
     <None Include="wwwroot\img\teacher-7.jpg" />
     <None Include="wwwroot\img\teacher-8.jpg" />
+    <None Include="wwwroot\js\animateAthletics.js" />
     <None Include="wwwroot\js\aos.js" />
     <None Include="wwwroot\js\bootstrap.min.js" />
     <None Include="wwwroot\js\counter.js" />
@@ -184,21 +370,41 @@
     <None Include="wwwroot\js\owl.carousel.min.js" />
     <None Include="wwwroot\js\popper.min.js" />
     <None Include="wwwroot\js\scrollax.min.js" />
+    <None Include="wwwroot\js\scrollDown.js" />
+    <None Include="wwwroot\simg\bckd.png" />
+    <None Include="wwwroot\simg\bd.jpg" />
+    <None Include="wwwroot\simg\bd11.jpg" />
+    <None Include="wwwroot\simg\help.jpg" />
+    <None Include="wwwroot\simg\img1.jpeg" />
+    <None Include="wwwroot\simg\img2.jpg" />
+    <None Include="wwwroot\simg\img3.jpeg" />
+    <None Include="wwwroot\simg\laptop.jpeg" />
+    <None Include="wwwroot\sservice\Academic Calendar111.docx" />
+    <None Include="wwwroot\sstyle.css" />
+    <None Include="wwwroot\styles\animateAthletics.css" />
     <None Include="wwwroot\styles\layout.css" />
+    <None Include="wwwroot\styles\styleAthletics.css" />
+    <None Include="wwwroot\styles\styleCon.css" />
+    <None Include="wwwroot\styles\styleEvent.css" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Antlr" Version="3.5.0.2" />
+    <PackageReference Include="AuthorizeNet" Version="2.0.1" />
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.5" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.5" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.5" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.5" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.5" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.5">
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.6">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
+    <PackageReference Include="Respond" Version="1.4.2" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
+    <PackageReference Include="xunit.extensibility.core" Version="2.4.1" />
   </ItemGroup>
 
 </Project>
