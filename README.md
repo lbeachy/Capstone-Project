@@ -1,2 +1,2 @@
 # Capstone Repository
- Group B's capstone project
+ Group B's capstone project for Columbus State Community College's capstone class.  It's a C# MVC web app that hosts a fake college website, complete with class and student registrations hooked up to a SQL database, actually well-styled pages using CSS, and real fake payments using an API I no longer remember since I didn't build that part, only debugged.  No longer hosted anywhere due to our group hosting it with a student AWS account and not continuing to host it after it ran out.  
